@@ -22,4 +22,3 @@ stopBtnEl.addEventListener('click', () => {
   startBtnEl.disabled = false;
   stopBtnEl.disabled = true;
 });
-np;
