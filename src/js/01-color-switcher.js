@@ -8,17 +8,17 @@ function getRandomHexColor() {
 }
 
 startBtnEl.addEventListener('click', () => {
+  startBtnEl.disabled = true;
+  stopBtnEl.disabled = false;
   randomColorBg = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
     console.log(getRandomHexColor());
-    startBtnEl.disabled = true;
-    stopBtnEl.disabled = false;
   }, 1000);
 });
 
 stopBtnEl.addEventListener('click', () => {
-  clearInterval(randomColorBg);
-  console.log('stopped');
   startBtnEl.disabled = false;
   stopBtnEl.disabled = true;
+  clearInterval(randomColorBg);
+  console.log('stopped');
 });
