@@ -62,12 +62,7 @@ const options = {
           minutesEl.innerHTML = addLeadingZero(differenceToObject.minutes);
           secondsEl.innerHTML = addLeadingZero(differenceToObject.seconds);
 
-          if (
-            daysEl.innerHTML === '00' &&
-            hoursEl.innerHTML === '00' &&
-            minutesEl.innerHTML === '00' &&
-            secondsEl.innerHTML === '00'
-          ) {
+          if (difference <= 0) {
             clearInterval(timer);
             Notiflix.Notify.success('Countdown finished!');
             startEl.disabled = false;
